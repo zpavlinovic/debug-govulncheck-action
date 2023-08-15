@@ -4,6 +4,9 @@ on: [push]
 jobs:
   govulncheck_job:
     runs-on: ubuntu-latest
+    env:
+      working-directory: .
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/govulncheck
+        working-directory: ./go
