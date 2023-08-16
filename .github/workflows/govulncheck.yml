@@ -9,5 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/govulncheck
+        continue-on-error: true
         with:
           work-dir: ./go/vuln
+      - run: exit 1
+        if: success()
