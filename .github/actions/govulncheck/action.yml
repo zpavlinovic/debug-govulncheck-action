@@ -20,7 +20,7 @@ inputs:
   work-dir:
     description: 'Directory in which to run govulncheck'
     required: false
-    defautl: '.'
+    default: '.'
 runs:
   using: "composite"
   steps:
