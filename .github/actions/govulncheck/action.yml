@@ -21,14 +21,14 @@ inputs:
     description: 'Directory in which to run govulncheck'
     required: false
     default: '.'
-  checkout:
+  repo-checkout:
     description: "Checkout the repository"
     required: false
     default: true
 runs:
   using: "composite"
   steps:
-    - if: true
+    - if: inputs.repo-checkout
       uses: actions/checkout@v3
     - uses: actions/setup-go@v4.0.0
       with:

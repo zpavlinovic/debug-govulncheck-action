@@ -11,4 +11,4 @@ jobs:
       - uses: ./.github/actions/govulncheck
         with:
           work-dir: ./go/vuln
-          checkout: false
+          repo-checkout: false
