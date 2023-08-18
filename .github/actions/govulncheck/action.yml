@@ -28,7 +28,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - if: inputs.checkout
+    - if: false
       uses: actions/checkout@v3
     - uses: actions/setup-go@v4.0.0
       with:
