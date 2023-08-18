@@ -1,6 +1,8 @@
 name: govulncheck
 run-name: ${{ github.actor }} is testing govulncheck action
 on: [push, workflow_dispatch]
+env:
+  ACTIONS_SET_DEBUG: true
 jobs:
   govulncheck_job:
     runs-on: ubuntu-latest
