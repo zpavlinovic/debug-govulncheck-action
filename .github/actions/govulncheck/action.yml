@@ -4,7 +4,6 @@ inputs:
   go-version-input:  # version of Go to use for govulncheck
     description: 'Version of Go to use for govulncheck'
     required: false
-    default: '>=1.19.0'
   check-latest:
     description: 'Set this option to true if you want the action to always check for the latest available Go version that satisfies the version spec'
     required: false
