@@ -12,5 +12,3 @@ jobs:
         with:
           work-dir: ./go/vuln
           repo-checkout: false
-      - run: go version
-        shell: bash

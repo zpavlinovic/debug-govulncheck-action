@@ -38,6 +38,8 @@ runs:
     - name: Install govulncheck
       run: go install golang.org/x/vuln/cmd/govulncheck@latest
       shell: bash
+    - run: go version
+      shell: bash
     - name: Run govulncheck
       run: govulncheck -C ${{ inputs.work-dir }} ${{ inputs.go-package }}
       shell: bash
