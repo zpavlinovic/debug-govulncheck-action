@@ -24,7 +24,7 @@ inputs:
     description: "Checkout the repository"
     required: false
     default: true
-  go-version-file:  # look at a go version file to user for govulncheck
+  go-version-file:
     description: 'Path to the go.mod or go.work file.' # see: https://github.com/actions/setup-go#getting-go-version-from-the-gomod-file
     required: false
 runs:
