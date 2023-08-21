@@ -25,6 +25,9 @@ inputs:
     description: "Checkout the repository"
     required: false
     default: true
+  go-version-file:  # look at a go version file to user for govulncheck
+    description: 'Path to the go.mod or go.work file.' # see: https://github.com/actions/setup-go#getting-go-version-from-the-gomod-file
+    required: false
 runs:
   using: "composite"
   steps:
@@ -33,6 +36,7 @@ runs:
     - uses: actions/setup-go@v4.0.0
       with:
         go-version: ${{ inputs.go-version-input }}
+        go-version-file: ${{ inputs.go-version-file }}
         check-latest: ${{ inputs.check-latest }}
         cache: ${{ inputs.cache }}
     - name: Install govulncheck
