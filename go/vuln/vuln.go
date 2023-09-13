@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("hello") // hola
+	fmt.Println("hello")
 	language.Parse("")
 	gjson.Result{}.Get("")
 	_, _ = pem.Decode([]byte("test"))
