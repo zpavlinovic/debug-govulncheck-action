@@ -50,5 +50,9 @@ runs:
       run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
       shell: bash
     - if: inputs.output-format == 'sarif'
+      id: gvcsarif
+      run: echo "govulncheck -C ${{ inputs.work-dir }} -format sarif ${{ inputs.go-package }}" >> "$GITHUB_OUTPUT"
       shell: bash
-      run: echo ZVONIMIR
+    - if: inputs.output-format == 'sarif'
+      shell: bash
+      run: echo "$steps.gcvsarif.outputs.output1"
