@@ -45,15 +45,13 @@ runs:
     - name: Install govulncheck
       run: go install golang.org/x/vuln/cmd/govulncheck@a7188c690e1d
       shell: bash
-    - if: inputs.output-format != 'sarif'
-      name: Run govulncheck
+    - name: Run govulncheck
+      id: govulncheck
       run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
       shell: bash
     - if: inputs.output-format == 'sarif'
-      id: gvcsarif
       shell: bash
-      run: |
-        govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }} > out.sarif
+      run: echo ${{ steps.govulncheck.outputs.stdout }} >> out.sarif
     - if: inputs.output-format == 'sarif'
       uses: github/codeql-action/upload-sarif@v3
       with:
