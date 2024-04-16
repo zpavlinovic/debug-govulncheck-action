@@ -51,8 +51,7 @@ runs:
       shell: bash
     - if: inputs.output-format == 'sarif'
       id: gvcsarif
-      run: echo "GVCSARIF=$(govulncheck -C ${{ inputs.work-dir }} -format sarif ${{ inputs.go-package }})" >> $GITHUB_OUTPUT
-      shell: bash
+      run: echo "GVCSARIF=$(govulncheck -C ${{ inputs.work-dir }} -format sarif ${{ inputs.go-package }})" >> "$GITHUB_OUTPUT"
     - if: inputs.output-format == 'sarif'
       shell: bash
       run: echo "$steps.gcvsarif.outputs.GVCSARIF"
