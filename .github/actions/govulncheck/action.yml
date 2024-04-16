@@ -52,9 +52,6 @@ runs:
     - if: inputs.output-format == 'sarif'
       id: gvcsarif
       shell: bash
-      run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
-    - if: inputs.output-format == 'sarif'
-      shell: bash
       run: |
-        echo ZVONIMIR
+        govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
         echo ${{ steps.gvcsarif.outputs.stdout }}
