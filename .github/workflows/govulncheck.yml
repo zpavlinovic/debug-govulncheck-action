@@ -13,3 +13,4 @@ jobs:
           work-dir: ./go/vuln
           repo-checkout: false
           go-version-file: ./go/vuln/go.mod
+          output-format: sarif
