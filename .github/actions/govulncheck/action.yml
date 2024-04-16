@@ -45,6 +45,9 @@ runs:
     - name: Install govulncheck
       run: go install golang.org/x/vuln/cmd/govulncheck@a7188c690e1d
       shell: bash
-    - name: Run govulncheck
+    - if: inputs.output-format != 'sarif'
+      name: Run govulncheck
       run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
       shell: bash
+    - if: inputs.output-format == "sarif"
+      run: echo ZVONIMIR
