@@ -59,4 +59,6 @@ runs:
         echo "$EOF" >> $GITHUB_OUTPUT
     - if: inputs.output-format == 'sarif'
       shell: bash
-      run: echo ${{ steps.gvcsarif.outputs.GVCSARIF }}
+      run: |
+        echo ZVONIMIR
+        echo ${{ steps.gvcsarif.outputs.GVCSARIF }}
