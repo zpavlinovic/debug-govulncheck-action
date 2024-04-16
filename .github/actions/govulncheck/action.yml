@@ -57,3 +57,6 @@ runs:
         echo "text<<$EOF" >> $GITHUB_OUTPUT
         echo "GVCSARIF=$(govulncheck -C ${{ inputs.work-dir }} -format sarif ${{ inputs.go-package }})" >> $GITHUB_OUTPUT
         echo "$EOF" >> $GITHUB_OUTPUT
+    - if: inputs.output-format == 'sarif'
+      shell: bash
+      run: echo ${{ steps.gvcsarif.outputs.GVCSARIF }}
