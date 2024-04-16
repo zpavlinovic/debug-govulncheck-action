@@ -1,6 +1,6 @@
 module golang.org/vuln
 
-go 1.18
+go 1.22
 
 require (
 	// This version has one vulnerability that is imported, and
