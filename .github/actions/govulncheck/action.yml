@@ -52,13 +52,9 @@ runs:
     - if: inputs.output-format == 'sarif'
       id: gvcsarif
       shell: bash
-      run: |
-        EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-        echo "text<<$EOF" >> $GITHUB_OUTPUT
-        echo "GVCSARIF=$(govulncheck -C ${{ inputs.work-dir }} -format sarif ${{ inputs.go-package }})" >> $GITHUB_OUTPUT
-        echo "$EOF" >> $GITHUB_OUTPUT
+      run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
     - if: inputs.output-format == 'sarif'
       shell: bash
       run: |
         echo ZVONIMIR
-        echo ${{ steps.gvcsarif.outputs.GVCSARIF }}
+        echo ${{ steps.gvcsarif.outputs.stdout }}
