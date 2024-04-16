@@ -50,4 +50,5 @@ runs:
       run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
       shell: bash
     - if: inputs.output-format == 'sarif'
+      shell: bash
       run: echo ZVONIMIR
