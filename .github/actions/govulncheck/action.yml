@@ -49,10 +49,10 @@ runs:
     - name: Install govulncheck
       run: go install golang.org/x/vuln/cmd/govulncheck@a7188c690e1d
       shell: bash
+    - name: Run govulncheck
+      id: govulncheck
+      run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }}
+      shell: bash
     - if: inputs.output-file != ''
       shell: bash
-      env:
-        redirect-output: '> ${{ inputs.output-file }}'
-    - name: Run govulncheck
-      run: govulncheck -C ${{ inputs.work-dir }} -format ${{ inputs.output-format }} ${{ inputs.go-package }} $redirect-output
-      shell: bash
+      run: echo ${{ steps.govulncheck.outputs.stdout }} > ${{ inputs.output-file }}
