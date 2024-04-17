@@ -16,6 +16,6 @@ jobs:
           output-format: sarif
           output-file: out.sarif
       - uses: github/codeql-action/upload-sarif@v3
-      with:
-        sarif_file: out.sarif
-        checkout_path: ./go/vuln
+        with:
+          sarif_file: out.sarif
+          checkout_path: ./go/vuln
