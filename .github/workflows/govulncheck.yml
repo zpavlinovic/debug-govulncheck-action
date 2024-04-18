@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is testing govulncheck action
 on: [push, workflow_dispatch]
 jobs:
   govulncheck_job:
+    security-events: write
     runs-on: ubuntu-latest
     env:
       working-directory: .
