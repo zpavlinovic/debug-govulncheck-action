@@ -47,7 +47,7 @@ runs:
         go-version-file: ${{ inputs.go-version-file }}
         cache: ${{ inputs.cache }}
     - name: Install govulncheck
-      run: go install golang.org/x/vuln/cmd/govulncheck@a7188c690e1d
+      run: go install golang.org/x/vuln/cmd/govulncheck@9aaa10372262
       shell: bash
     - if: inputs.output-file == ''
       name: Run govulncheck
