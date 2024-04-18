@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 jobs:
   govulncheck_job:
     permissions:
-      security-events: write-all
+      security-events: write
     runs-on: ubuntu-latest
     env:
       working-directory: .
