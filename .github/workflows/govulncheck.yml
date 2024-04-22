@@ -12,12 +12,12 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/govulncheck
         with:
-          work-dir: vuln
+          work-dir: .
           repo-checkout: false
-          go-version-file: vuln/go.mod
+          go-version-file: go.mod
           output-format: sarif
           output-file: out.sarif
       - uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: out.sarif
-          checkout_path: ${{ github.workspace }}/vuln
+            #checkout_path: ${{ github.workspace }}/vuln
