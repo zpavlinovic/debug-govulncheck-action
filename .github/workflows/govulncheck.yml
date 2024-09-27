@@ -14,7 +14,6 @@ jobs:
         with:
           work-dir: .
           repo-checkout: false
-          go-version-input: '1.23.x'
           #go-version-file: go.mod
           #output-format: sarif
           #output-file: out.sarif
