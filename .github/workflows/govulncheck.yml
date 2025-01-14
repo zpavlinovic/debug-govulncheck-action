@@ -14,7 +14,7 @@ jobs:
         with:
           work-dir: .
           repo-checkout: false
-          cache-dependency-path: 'go.sum'
+          cache-dependency-path: go.sum
           #go-version-file: go.mod
           #output-format: sarif
           #output-file: out.sarif
